@@ -1,0 +1,345 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x1517b134, pid=5652, tid=7424
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_60-b27) (build 1.8.0_60-b27)
+# Java VM: Java HotSpot(TM) Client VM (25.60-b23 mixed mode windows-x86 )
+# Problematic frame:
+# C  [buddy.dll+0xb134]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00acd800):  JavaThread "main" [_thread_in_native, id=7424, stack(0x004c0000,0x00510000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000020
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x15330488, EDX=0x00000020
+ESP=0x0050ed38, EBP=0x0050ed98, ESI=0x00000000, EDI=0x00000000
+EIP=0x1517b134, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0050ed38)
+0x0050ed38:   000014b5 00000000 00000009 01050f98
+0x0050ed48:   00acd800 15171584 00000001 00ac2328
+0x0050ed58:   00acd800 00000000 00acd800 01050f98
+0x0050ed68:   00acc1e8 00acd800 00acd940 01050f98
+0x0050ed78:   00000204 15330488 00000006 00000000
+0x0050ed88:   00000000 00000080 00000002 01050f98
+0x0050ed98:   0050eddc 15171599 00000080 01050f98
+0x0050eda8:   00acd800 0282c0c3 00acd940 0050ede4 
+
+Instructions: (pc=0x1517b134)
+0x1517b114:   1f 01 0f af c2 33 d2 d1 e8 83 c0 01 f7 f6 8b 35
+0x1517b124:   7c 36 1a 15 89 55 f8 8d 14 12 03 d2 03 d2 03 d2
+0x1517b134:   8b 04 32 25 ff ff ff 07 74 43 89 55 e0 8b fb 89
+0x1517b144:   5d e8 c1 e7 1b 89 7d fc 8b fb 8b 5d fc c1 e7 16 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x15330488 is an unknown value
+EDX=0x00000020 is an unknown value
+ESP=0x0050ed38 is pointing into the stack for thread: 0x00acd800
+EBP=0x0050ed98 is pointing into the stack for thread: 0x00acd800
+ESI=0x00000000 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0x004c0000,0x00510000],  sp=0x0050ed38,  free space=315k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [buddy.dll+0xb134]
+C  [buddy.dll+0x1599]
+j  net.sf.javabdd.BuDDyFactory.setVarNum(I)I+1
+j  net.sf.javabdd.TypedBDDFactory.setVarNum(I)I+5
+j  com.system.kripkestructure.KripkeStructureTranslator.setFactory()V+57
+j  com.system.kripkestructure.KripkeStructureTranslator.translateProgram()Z+5
+j  com.system.kripkestructure.KripkeStructureTranslator.tryTranslate()Z+70
+j  com.system.Controller.startVerification()Lcom/system/CTLVerificator;+125
+j  com.system.ControllerTest.testStartVerification()V+43
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158985]
+V  [jvm.dll+0x21df3e]
+V  [jvm.dll+0x158a1e]
+V  [jvm.dll+0x165208]
+V  [jvm.dll+0x165473]
+V  [jvm.dll+0x102153]
+C  [java.dll+0x3b26]
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.junit.runners.model.FrameworkMethod$1.runReflectiveCall()Ljava/lang/Object;+15
+j  org.junit.internal.runners.model.ReflectiveCallable.run()Ljava/lang/Object;+1
+j  org.junit.runners.model.FrameworkMethod.invokeExplosively(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.junit.internal.runners.statements.InvokeMethod.evaluate()V+12
+j  org.junit.runners.ParentRunner.runLeaf(Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;Lorg/junit/runner/notification/RunNotifier;)V+17
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V+32
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Ljava/lang/Object;Lorg/junit/runner/notification/RunNotifier;)V+6
+j  org.junit.runners.ParentRunner$3.run()V+12
+j  org.junit.runners.ParentRunner$1.schedule(Ljava/lang/Runnable;)V+1
+j  org.junit.runners.ParentRunner.runChildren(Lorg/junit/runner/notification/RunNotifier;)V+40
+j  org.junit.runners.ParentRunner.access$000(Lorg/junit/runners/ParentRunner;Lorg/junit/runner/notification/RunNotifier;)V+2
+j  org.junit.runners.ParentRunner$2.evaluate()V+8
+j  org.junit.runners.ParentRunner.run(Lorg/junit/runner/notification/RunNotifier;)V+20
+j  org.apache.maven.surefire.junit4.JUnit4TestSet.execute(Ljava/lang/Class;Lorg/junit/runner/notification/RunNotifier;Ljava/lang/String;)V+79
+j  org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(Ljava/lang/Class;Lorg/apache/maven/surefire/report/RunListener;Lorg/junit/runner/notification/RunNotifier;)V+34
+j  org.apache.maven.surefire.junit4.JUnit4Provider.invoke(Ljava/lang/Object;)Lorg/apache/maven/surefire/suite/RunResult;+133
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158985]
+V  [jvm.dll+0x21df3e]
+V  [jvm.dll+0x158a1e]
+V  [jvm.dll+0x165208]
+V  [jvm.dll+0x165473]
+V  [jvm.dll+0x102153]
+C  [java.dll+0x3b26]
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(Ljava/lang/Object;)Lorg/apache/maven/surefire/suite/RunResult;+29
+j  org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(Ljava/lang/Object;Ljava/lang/ClassLoader;Ljava/lang/ClassLoader;Ljava/lang/Object;)Lorg/apache/maven/surefire/suite/RunResult;+41
+j  org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked()Lorg/apache/maven/surefire/suite/RunResult;+33
+j  org.apache.maven.surefire.booter.ForkedBooter.main([Ljava/lang/String;)V+109
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158985]
+V  [jvm.dll+0x21df3e]
+V  [jvm.dll+0x158a1e]
+V  [jvm.dll+0xdaac7]
+V  [jvm.dll+0xe305f]
+C  [java.exe+0x228d]
+C  [java.exe+0xae9f]
+C  [java.exe+0xaf29]
+C  [KERNEL32.DLL+0x17c04]
+C  [ntdll.dll+0x5ad1f]
+C  [ntdll.dll+0x5acea]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  net.sf.javabdd.BuDDyFactory.setVarNum0(I)I+0
+j  net.sf.javabdd.BuDDyFactory.setVarNum(I)I+1
+j  net.sf.javabdd.TypedBDDFactory.setVarNum(I)I+5
+j  com.system.kripkestructure.KripkeStructureTranslator.setFactory()V+57
+j  com.system.kripkestructure.KripkeStructureTranslator.translateProgram()Z+5
+j  com.system.kripkestructure.KripkeStructureTranslator.tryTranslate()Z+70
+j  com.system.Controller.startVerification()Lcom/system/CTLVerificator;+125
+j  com.system.ControllerTest.testStartVerification()V+43
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.junit.runners.model.FrameworkMethod$1.runReflectiveCall()Ljava/lang/Object;+15
+j  org.junit.internal.runners.model.ReflectiveCallable.run()Ljava/lang/Object;+1
+j  org.junit.runners.model.FrameworkMethod.invokeExplosively(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.junit.internal.runners.statements.InvokeMethod.evaluate()V+12
+j  org.junit.runners.ParentRunner.runLeaf(Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;Lorg/junit/runner/notification/RunNotifier;)V+17
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V+32
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Ljava/lang/Object;Lorg/junit/runner/notification/RunNotifier;)V+6
+j  org.junit.runners.ParentRunner$3.run()V+12
+j  org.junit.runners.ParentRunner$1.schedule(Ljava/lang/Runnable;)V+1
+j  org.junit.runners.ParentRunner.runChildren(Lorg/junit/runner/notification/RunNotifier;)V+40
+j  org.junit.runners.ParentRunner.access$000(Lorg/junit/runners/ParentRunner;Lorg/junit/runner/notification/RunNotifier;)V+2
+j  org.junit.runners.ParentRunner$2.evaluate()V+8
+j  org.junit.runners.ParentRunner.run(Lorg/junit/runner/notification/RunNotifier;)V+20
+j  org.apache.maven.surefire.junit4.JUnit4TestSet.execute(Ljava/lang/Class;Lorg/junit/runner/notification/RunNotifier;Ljava/lang/String;)V+79
+j  org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(Ljava/lang/Class;Lorg/apache/maven/surefire/report/RunListener;Lorg/junit/runner/notification/RunNotifier;)V+34
+j  org.apache.maven.surefire.junit4.JUnit4Provider.invoke(Ljava/lang/Object;)Lorg/apache/maven/surefire/suite/RunResult;+133
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(Ljava/lang/Object;)Lorg/apache/maven/surefire/suite/RunResult;+29
+j  org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(Ljava/lang/Object;Ljava/lang/ClassLoader;Ljava/lang/ClassLoader;Ljava/lang/Object;)Lorg/apache/maven/surefire/suite/RunResult;+41
+j  org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked()Lorg/apache/maven/surefire/suite/RunResult;+33
+j  org.apache.maven.surefire.booter.ForkedBooter.main([Ljava/lang/String;)V+109
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x011c2000 JavaThread "Service Thread" daemon [_thread_blocked, id=3676, stack(0x14c90000,0x14ce0000)]
+  0x011ccc00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=3236, stack(0x14c00000,0x14c50000)]
+  0x011cb400 JavaThread "Attach Listener" daemon [_thread_blocked, id=6100, stack(0x04940000,0x04990000)]
+  0x011c9400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6224, stack(0x048b0000,0x04900000)]
+  0x01199000 JavaThread "Finalizer" daemon [_thread_blocked, id=8172, stack(0x04820000,0x04870000)]
+  0x01194000 JavaThread "Reference Handler" daemon [_thread_blocked, id=8000, stack(0x01390000,0x013e0000)]
+=>0x00acd800 JavaThread "main" [_thread_in_native, id=7424, stack(0x004c0000,0x00510000)]
+
+Other Threads:
+  0x00aae000 VMThread [stack: 0x00c50000,0x00ca0000] [id=1392]
+  0x011c5c00 WatcherThread [stack: 0x14d20000,0x14d70000] [id=8144]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 3216K [0x04a00000, 0x04f50000, 0x09f50000)
+  eden space 4416K,  61% used [0x04a00000, 0x04ca4118, 0x04e50000)
+  from space 512K, 100% used [0x04ed0000, 0x04f50000, 0x04f50000)
+  to   space 512K,   0% used [0x04e50000, 0x04e50000, 0x04ed0000)
+ tenured generation   total 10944K, used 553K [0x09f50000, 0x0aa00000, 0x14a00000)
+   the space 10944K,   5% used [0x09f50000, 0x09fda448, 0x09fda600, 0x0aa00000)
+ Metaspace       used 3219K, capacity 3264K, committed 3264K, reserved 4480K
+
+Card table byte_map: [0x00bc0000,0x00c50000] byte_map_base: 0x00b9b000
+
+Polling page: 0x003a0000
+
+CodeCache: size=32768Kb used=886Kb max_used=886Kb free=31881Kb
+ bounds [0x02820000, 0x02900000, 0x04820000]
+ total_blobs=264 nmethods=116 adapters=79
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.271 Thread 0x011ccc00  112             java.lang.StringBuilder::toString (17 bytes)
+Event: 0.271 Thread 0x011ccc00 nmethod 112 0x028fcec8 code [0x028fcfd0, 0x028fd0bc]
+Event: 0.271 Thread 0x011ccc00  113             java.net.URL::getFile (5 bytes)
+Event: 0.271 Thread 0x011ccc00 nmethod 113 0x028fd148 code [0x028fd240, 0x028fd2c0]
+Event: 0.275 Thread 0x011ccc00  114             java.lang.String::<init> (10 bytes)
+Event: 0.275 Thread 0x011ccc00 nmethod 114 0x028fd308 code [0x028fd400, 0x028fd490]
+Event: 0.281 Thread 0x011ccc00  115             java.lang.StringBuilder::<init> (7 bytes)
+Event: 0.281 Thread 0x011ccc00 nmethod 115 0x028fd4c8 code [0x028fd5c0, 0x028fd6d0]
+Event: 0.281 Thread 0x011ccc00  116             java.lang.String::indexOf (7 bytes)
+Event: 0.281 Thread 0x011ccc00 nmethod 116 0x028fd748 code [0x028fd850, 0x028fd91c]
+
+GC Heap History (2 events):
+Event: 0.198 GC heap before
+{Heap before GC invocations=0 (full 0):
+ def new generation   total 4928K, used 4416K [0x04a00000, 0x04f50000, 0x09f50000)
+  eden space 4416K, 100% used [0x04a00000, 0x04e50000, 0x04e50000)
+  from space 512K,   0% used [0x04e50000, 0x04e50000, 0x04ed0000)
+  to   space 512K,   0% used [0x04ed0000, 0x04ed0000, 0x04f50000)
+ tenured generation   total 10944K, used 0K [0x09f50000, 0x0aa00000, 0x14a00000)
+   the space 10944K,   0% used [0x09f50000, 0x09f50000, 0x09f50200, 0x0aa00000)
+ Metaspace       used 2565K, capacity 2608K, committed 2624K, reserved 4480K
+Event: 0.200 GC heap after
+Heap after GC invocations=1 (full 0):
+ def new generation   total 4928K, used 512K [0x04a00000, 0x04f50000, 0x09f50000)
+  eden space 4416K,   0% used [0x04a00000, 0x04a00000, 0x04e50000)
+  from space 512K, 100% used [0x04ed0000, 0x04f50000, 0x04f50000)
+  to   space 512K,   0% used [0x04e50000, 0x04e50000, 0x04ed0000)
+ tenured generation   total 10944K, used 553K [0x09f50000, 0x0aa00000, 0x14a00000)
+   the space 10944K,   5% used [0x09f50000, 0x09fda448, 0x09fda600, 0x0aa00000)
+ Metaspace       used 2565K, capacity 2608K, committed 2624K, reserved 4480K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.112 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04bcdf90) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.112 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04bce190) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.112 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04bcf280) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.112 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04bcf480) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.112 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04bd0628) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.112 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04bd0828) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.195 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04e46a80) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.195 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04e46e60) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.196 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04e4b280) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+Event: 0.196 Thread 0x00acd800 Exception <a 'java/security/PrivilegedActionException'> (0x04e4b660) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u60\4407\hotspot\src\share\vm\prims\jvm.cpp, line 1386]
+
+Events (10 events):
+Event: 0.277 loading class java/lang/UnsatisfiedLinkError
+Event: 0.277 loading class java/lang/UnsatisfiedLinkError done
+Event: 0.277 loading class java/lang/ClassLoaderHelper
+Event: 0.277 loading class java/lang/ClassLoaderHelper done
+Event: 0.280 loading class net/sf/javabdd/BDDFactory$GCStats
+Event: 0.280 loading class net/sf/javabdd/BDDFactory$GCStats done
+Event: 0.280 loading class net/sf/javabdd/BDDFactory$ReorderStats
+Event: 0.280 loading class net/sf/javabdd/BDDFactory$ReorderStats done
+Event: 0.281 loading class net/sf/javabdd/BDDFactory$CacheStats
+Event: 0.281 loading class net/sf/javabdd/BDDFactory$CacheStats done
+
+
+Dynamic libraries:
+0x013e0000 - 0x01413000 	C:\Program Files (x86)\Java\jdk1.8.0_60\jre\bin\java.exe
+0x77140000 - 0x772ae000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x74a30000 - 0x74b70000 	C:\WINDOWS\SYSTEM32\KERNEL32.DLL
+0x74b90000 - 0x74c67000 	C:\WINDOWS\SYSTEM32\KERNELBASE.dll
+0x74330000 - 0x743d0000 	C:\WINDOWS\system32\apphelp.dll
+0x63a20000 - 0x63c86000 	C:\WINDOWS\AppPatch\AcGenral.DLL
+0x76c70000 - 0x76d33000 	C:\WINDOWS\SYSTEM32\msvcrt.dll
+0x74c70000 - 0x74cb1000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x74940000 - 0x7495e000 	C:\WINDOWS\SYSTEM32\SspiCli.dll
+0x76a00000 - 0x76a45000 	C:\WINDOWS\SYSTEM32\SHLWAPI.dll
+0x71a20000 - 0x71b0d000 	C:\WINDOWS\SYSTEM32\UxTheme.dll
+0x76a50000 - 0x76ba3000 	C:\WINDOWS\SYSTEM32\USER32.dll
+0x76e60000 - 0x76f6f000 	C:\WINDOWS\SYSTEM32\GDI32.dll
+0x71b40000 - 0x71b63000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x717e0000 - 0x717f3000 	C:\WINDOWS\SYSTEM32\samcli.dll
+0x75090000 - 0x751b9000 	C:\WINDOWS\SYSTEM32\ole32.dll
+0x74960000 - 0x749f5000 	C:\WINDOWS\SYSTEM32\OLEAUT32.dll
+0x70260000 - 0x70277000 	C:\WINDOWS\SYSTEM32\MSACM32.dll
+0x71bf0000 - 0x71bf8000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x75700000 - 0x769ad000 	C:\WINDOWS\SYSTEM32\SHELL32.dll
+0x748a0000 - 0x748bb000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x71a00000 - 0x71a1a000 	C:\WINDOWS\SYSTEM32\dwmapi.dll
+0x70060000 - 0x701aa000 	C:\WINDOWS\SYSTEM32\urlmon.dll
+0x76bb0000 - 0x76c2c000 	C:\WINDOWS\SYSTEM32\ADVAPI32.dll
+0x74560000 - 0x745c5000 	C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+0x63a00000 - 0x63a16000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x75230000 - 0x752ea000 	C:\WINDOWS\SYSTEM32\RPCRT4.dll
+0x74930000 - 0x7493a000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x754b0000 - 0x7562d000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x71b10000 - 0x71b33000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x74880000 - 0x7488f000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x6fe20000 - 0x70052000 	C:\WINDOWS\SYSTEM32\iertutil.dll
+0x6fbe0000 - 0x6fdc4000 	C:\WINDOWS\SYSTEM32\WININET.dll
+0x748d0000 - 0x74924000 	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll
+0x74fc0000 - 0x74ffc000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x74800000 - 0x74821000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x74660000 - 0x746eb000 	C:\WINDOWS\SYSTEM32\SHCORE.DLL
+0x74a00000 - 0x74a27000 	C:\WINDOWS\system32\IMM32.DLL
+0x76d40000 - 0x76e52000 	C:\WINDOWS\SYSTEM32\MSCTF.dll
+0x70d60000 - 0x70f66000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17810_none_a9edf09f013934e0\COMCTL32.dll
+0x63940000 - 0x639ff000 	C:\Program Files (x86)\Java\jdk1.8.0_60\jre\bin\msvcr100.dll
+0x60ca0000 - 0x61065000 	C:\Program Files (x86)\Java\jdk1.8.0_60\jre\bin\client\jvm.dll
+0x71ca0000 - 0x71ca8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x76fd0000 - 0x76fd6000 	C:\WINDOWS\SYSTEM32\PSAPI.DLL
+0x769b0000 - 0x76a00000 	C:\WINDOWS\SYSTEM32\WS2_32.dll
+0x75630000 - 0x75637000 	C:\WINDOWS\SYSTEM32\NSI.dll
+0x6fb70000 - 0x6fb7c000 	C:\Program Files (x86)\Java\jdk1.8.0_60\jre\bin\verify.dll
+0x688a0000 - 0x688c1000 	C:\Program Files (x86)\Java\jdk1.8.0_60\jre\bin\java.dll
+0x68880000 - 0x68893000 	C:\Program Files (x86)\Java\jdk1.8.0_60\jre\bin\zip.dll
+0x15170000 - 0x151a9000 	D:\git\modelcheckingsystem\ModelCheckingSystem\buddy.dll
+0x6f970000 - 0x6fab1000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+java_command: D:\git\modelcheckingsystem\ModelCheckingSystem\target\surefire\surefirebooter2692606721715272989.jar D:\git\modelcheckingsystem\ModelCheckingSystem\target\surefire\surefire7090503249025372669tmp D:\git\modelcheckingsystem\ModelCheckingSystem\target\surefire\surefire8356523546843894255tmp
+java_class_path (initial): D:\git\modelcheckingsystem\ModelCheckingSystem\target\surefire\surefirebooter2692606721715272989.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files (x86)\Java\jdk1.8.0_60
+USERNAME=173042
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.17415)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 6172128k(2764684k free), swap 8072672k(3606424k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.60-b23) for windows-x86 JRE (1.8.0_60-b27), built on Aug  4 2015 10:57:40 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Aug 25 22:15:08 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
